@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from './../event.service';
+
+
 
 @Component({
   selector: 'app-events',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
+
 
   ngOnInit(): void {
+  }
+
+  async add(title: string) {
+    await this.eventService.add(title); // Eintrag hinzufügen
   }
 
 }
