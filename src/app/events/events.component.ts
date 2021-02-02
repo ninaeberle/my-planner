@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from './../event.service';
-
+import { Event } from '../event';
 
 
 @Component({
@@ -9,15 +9,21 @@ import { EventService } from './../event.service';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
+  events: Event[] = []; // Eintrag in Array speichern
 
   constructor(private eventService: EventService) { }
 
-
   ngOnInit(): void {
+    this.getAll();
   }
-
+  async getAll() {
+    this.events = await this.eventService.getAll();
+  }
+  
   async add(title: string) {
     await this.eventService.add(title); // Eintrag hinzufügen
+    this.getAll();
   }
-
+  
 }
+
