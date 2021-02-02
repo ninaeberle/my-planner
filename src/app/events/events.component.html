@@ -1,7 +1,11 @@
-<input type="text" #input>
-<button (click)="add(input.value)">Add</button>
+<div style="margin: 50px;">
+    <input type="text" #input>
+<button (click)="add(input.value)">Hinzufügen</button>
 <ul>
     <li *ngFor="let event of events">
-        {{ event.title }}
+        {{ event.title }} ({{event.over}})
+            <button (click)="setDone(event)">Erledigt</button>
     </li>
 </ul>
+</div>
+

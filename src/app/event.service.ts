@@ -12,7 +12,7 @@ export class EventService extends Dexie {
   events: Dexie.Table<Event, string>;
 
   constructor() {
-    
+
     super('EventsDatabase');
     this.version(1).stores({
       events: 'id'
