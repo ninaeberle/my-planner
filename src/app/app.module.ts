@@ -18,7 +18,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 // import {MatInputModule} from '@angular/material/input';
-
+import { MatSliderModule } from '@angular/material/slider';
+import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule,
     MatListModule,
     MatSnackBarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSliderModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatBadgeModule
 
   ],
   providers: [],
