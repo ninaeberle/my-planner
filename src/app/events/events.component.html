@@ -1,13 +1,25 @@
 <div style="margin: 50px;">
-    <input type="text" placeholder="Titel" #input>
-    
-    <button (click)="add(input.value)">Termin hinzufügen</button>
+
+        <input matInput type="text" style="margin-top:10px;" placeholder="Titel" #input><br>
+        <input matInput type="text" style="margin-top:10px;" placeholder="Datum"><br>
+        <input matInput type="text" style="margin-top:10px;" placeholder="Uhrzeit"><br>
+        <button mat-raised-button color="primary" style="margin-top:10px;" (click)="add(input.value)">Termin hinzufügen</button>
+
+        <h2>Deine Termine</h2>
 <ul>
     <li *ngFor="let event of events" style="list-style: none;">
-        <input (click)="setDone(event)" type="checkbox" id="horns" name="horns">
+        <mat-checkbox (click)="setDone(event)"></mat-checkbox>
         {{ event.title }} ({{event.over}})
-            
     </li>
 </ul>
+
+<!-- 
+<mat-list>
+    <mat-selection-list #input>
+        <mat-list-option *ngFor="let event of events">
+            <h3 matLine (click)="setDone(event)"> {{event.title}} ({{event.over}}) </h3>
+        </mat-list-option>
+    </mat-selection-list>
+</mat-list>-->
 </div>
 

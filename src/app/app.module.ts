@@ -16,6 +16,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+// import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCheckboxModule
 
   ],
   providers: [],
