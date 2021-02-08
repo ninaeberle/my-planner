@@ -17,6 +17,9 @@ export class EventService extends Dexie {
     this.version(1).stores({
       events: 'id'
     });
+    // this.version(2).stores({
+     // events: 'id, date'
+    // });
   }
 
   add(title: string): Promise<any> {
