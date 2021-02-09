@@ -22,12 +22,8 @@
         <mat-card-subtitle style="margin-top: 15px; margin-bottom: 30px;">Hier siehst du eine Liste deiner bereits erstellten Termine.</mat-card-subtitle>
         <mat-card-content>
             <ul>
-                <li *ngFor="let event of events" style="list-style: none; margin-bottom: 10px;">
-                   <span (input)="setDone(event)">
-                       <mat-checkbox [checked]="event.over">
-                       </mat-checkbox>
-                       {{ event.title }} am {{ event.mydate }} um {{ event.mytime }} Uhr  ({{event.over}})
-                    </span>
+                <li *ngFor="let event of events" style="list-style: none;">
+                   <span (input)="setDone(event)"><mat-checkbox [checked]="event.over"></mat-checkbox><span *ngIf="event.over == false">{{ event.title }}</span><span *ngIf="event.over == true" style="text-decoration: line-through;">{{ event.title }}</span> am {{ event.mydate }} um {{ event.mytime }} Uhr  ({{event.over}})</span>
                 </li>  
             </ul>
         </mat-card-content>
