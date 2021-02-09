@@ -18,7 +18,7 @@
         <mat-card-content>
             <ul>
                 <li *ngFor="let event of events" style="list-style: none;">
-                   <span (input)="setDone(event)"><mat-checkbox [checked]="event.over"></mat-checkbox><span *ngIf="event.over == false">{{ event.title }}</span><span *ngIf="event.over == true" style="text-decoration: line-through;">{{ event.title }}</span> am {{ event.mydate }} um {{ event.mytime }} Uhr  ({{event.over}})</span>
+                   <span (input)="setDone(event)"><mat-checkbox [checked]="event.over"></mat-checkbox>{{ event.title }} am {{ event.mydate }} um {{ event.mytime }} Uhr  ({{event.over}})</span>
                 </li>  
             </ul>
         </mat-card-content>
