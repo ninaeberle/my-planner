@@ -22,6 +22,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatSliderModule,
     MatCardModule,
     MatDatepickerModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatInputModule
 
   ],
   providers: [],
