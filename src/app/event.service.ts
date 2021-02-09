@@ -17,14 +17,11 @@ export class EventService extends Dexie {
     this.version(1).stores({
       events: 'id'
     });
-    // this.version(2).stores({
-     // events: 'id, date'
-    // });
   }
 
-  add(title: string): Promise<any> {
+  add(title: string, mydate: string, mytime: string): Promise<any> {
     const id = uuidv4();
-    return this.events.add({ id, title, over: false });
+    return this.events.add({ id, title, over: false, mydate, mytime });
   }
 
   getAll(): Promise<Event[]> {

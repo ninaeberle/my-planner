@@ -28,8 +28,8 @@ export class EventsComponent implements OnInit {
     this.events = await this.eventService.getAll();
   }
 
-  async add(title: string) {
-    await this.eventService.add(title); // Eintrag hinzufügen
+  async add(title: string, mydate: string, mytime: string) {
+    await this.eventService.add(title, mydate, mytime); // Eintrag hinzufügen
     this.getAll();
   }
 

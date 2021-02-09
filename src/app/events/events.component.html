@@ -1,24 +1,28 @@
-<div style="margin: 50px;">
 
-        <input matInput type="text" style="margin-top:10px;" placeholder="Titel" #input><br>
-        <input matInput type="text" style="margin-top:10px;" placeholder="Datum"><br>
-        <input matInput type="text" style="margin-top:10px;" placeholder="Uhrzeit"><br>
-        <button mat-raised-button color="primary" style="margin-top:10px;" (click)="add(input.value)">Termin hinzufügen</button>
-
-        <h2>Deine Termine</h2>
-<ul>
-    <li *ngFor="let event of events" style="list-style: none;">               
-    <span (input)="setDone(event)"><mat-checkbox [checked]="event.over"></mat-checkbox><span *ngIf="event.over == false">{{ event.title }}</span><span *ngIf="event.over == true" style="text-decoration: line-through;">{{ event.title }}</span> ({{event.over}})</span>
-    </li>
-</ul>
-
-<!-- 
-<mat-list>
-    <mat-selection-list #input>
-        <mat-list-option *ngFor="let event of events">
-            <h3 matLine (click)="setDone(event)"> {{event.title}} ({{event.over}}) </h3>
-        </mat-list-option>
-    </mat-selection-list>
-</mat-list>-->
+<div style="margin: 50px; padding: 10px;">
+    <mat-card class="container" style="margin:10px;">
+        <mat-card-title>Neuer Termin</mat-card-title>
+        <mat-card-subtitle>Erstelle deinen Termin.</mat-card-subtitle>
+        <mat-card-content>
+            <input matInput type="text" style="margin-top:10px;" placeholder="Titel" #input><br>
+            <input matInput type="text" style="margin-top:10px;" placeholder="Datum"#date><br>
+            <input matInput type="text" style="margin-top:10px;" placeholder="Uhrzeit" #time><br>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="add(input.value, date.value, time.value)">Termin hinzufügen</button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="container" style="margin:10px;">
+        <mat-card-title>Deine Termine</mat-card-title>
+        <mat-card-subtitle>Hier siehst du eine Liste deiner bereits erstellten Termine.</mat-card-subtitle>
+        <mat-card-content>
+            <ul>
+                <li *ngFor="let event of events" style="list-style: none;">
+                   <span (input)="setDone(event)"><mat-checkbox [checked]="event.over"></mat-checkbox><span *ngIf="event.over == false">{{ event.title }}</span><span *ngIf="event.over == true" style="text-decoration: line-through;">{{ event.title }}</span> am {{ event.mydate }} um {{ event.mytime }} Uhr  ({{event.over}})</span>
+                </li>  
+            </ul>
+        </mat-card-content>
+    </mat-card>
 </div>
+
 
