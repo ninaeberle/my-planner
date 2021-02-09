@@ -15,9 +15,11 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
+
   }
   async setDone(event: Event) {
       event.over = true;
+
         await this.eventService.events.put(event);
         await this.getAll();
     }

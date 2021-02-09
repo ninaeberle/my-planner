@@ -7,9 +7,8 @@
 
         <h2>Deine Termine</h2>
 <ul>
-    <li *ngFor="let event of events" style="list-style: none;">
-        <mat-checkbox (click)="setDone(event)"></mat-checkbox>
-        {{ event.title }} ({{event.over}})
+    <li *ngFor="let event of events" style="list-style: none;">               
+    <span (input)="setDone(event)"><mat-checkbox [checked]="event.over"></mat-checkbox>{{ event.title }} ({{event.over}})</span>
     </li>
 </ul>
 
