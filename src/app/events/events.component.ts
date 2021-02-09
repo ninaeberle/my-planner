@@ -10,6 +10,7 @@ import { Event } from '../event';
 })
 export class EventsComponent implements OnInit {
   events: Event[] = []; // Eintrag in Array speichern
+  clicker: number;
 
   constructor(private eventService: EventService) { }
 
@@ -18,7 +19,14 @@ export class EventsComponent implements OnInit {
 
   }
   async setDone(event: Event) {
-      event.over = true;
+      if(event.over == false){
+        event.over = true;
+      }
+
+      else if (event.over == true){
+        event.over = false;
+      }
+
 
         await this.eventService.events.put(event);
         await this.getAll();
