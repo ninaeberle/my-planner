@@ -4,11 +4,11 @@
         <mat-card-subtitle>Erstelle deinen Termin.</mat-card-subtitle>
         <mat-card-content>
             <input matInput type="text" style="margin-top:10px;" placeholder="Titel" #input><br>
-            <input matInput type="text" style="margin-top:10px;" placeholder="Datum"><br>
-            <input matInput type="text" style="margin-top:10px;" placeholder="Uhrzeit"><br>
+            <input matInput type="text" style="margin-top:10px;" placeholder="Datum"#date><br>
+            <input matInput type="text" style="margin-top:10px;" placeholder="Uhrzeit" #time><br>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="add(input.value)">Termin hinzufügen</button>
+            <button mat-raised-button color="primary" (click)="add(input.value, date.value, time.value)">Termin hinzufügen</button>
         </mat-card-actions>
     </mat-card>
     <mat-card class="container" style="margin:10px;">
@@ -18,7 +18,7 @@
             <ul>
                 <li *ngFor="let event of events" style="list-style: none;">
                     <mat-checkbox (click)="setDone(event)"></mat-checkbox>
-                    {{ event.title }} ({{event.over}})
+                    {{ event.title }} am {{ event.mydate }} um {{ event.mytime }} Uhr ({{event.over}})
                 </li>
             </ul>
         </mat-card-content>
