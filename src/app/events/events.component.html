@@ -17,20 +17,11 @@
         <mat-card-content>
             <ul>
                 <li *ngFor="let event of events" style="list-style: none;">
-                    <mat-checkbox (click)="setDone(event)"></mat-checkbox>
-                    {{ event.title }} am {{ event.mydate }} um {{ event.mytime }} Uhr ({{event.over}})
-                </li>
+                   <span (input)="setDone(event)"><mat-checkbox [checked]="event.over"></mat-checkbox>{{ event.title }} am {{ event.mydate }} um {{ event.mytime }} Uhr  ({{event.over}})</span>
+                </li>  
             </ul>
         </mat-card-content>
     </mat-card>
 </div>
-<!-- 
-<mat-list>
-    <mat-selection-list #input>
-        <mat-list-option *ngFor="let event of events">
-            <h3 matLine (click)="setDone(event)"> {{event.title}} ({{event.over}}) </h3>
-        </mat-list-option>
-    </mat-selection-list>
-</mat-list>-->
 
 
