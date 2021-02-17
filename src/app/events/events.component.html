@@ -4,13 +4,15 @@
         <mat-card-subtitle style="margin-top: 15px;">Erstelle deinen Termin.</mat-card-subtitle>
         <mat-card-content>
             <mat-form-field>
-                <input matInput type="text" style="margin-top:10px;" placeholder="Titel" #input>
+                <input matInput type="text" style="margin-top:10px;" placeholder="Titel" #input required>
             </mat-form-field><br>
             <mat-form-field>
-                <input matInput type="text" style="margin-top:10px;" placeholder="Datum"#date>
+                <mat-label>Datum </mat-label>
+                <textarea matInput placeholder="z.B.: 01.01.2021"#date required></textarea>
             </mat-form-field><br>
             <mat-form-field>
-                <input matInput type="text" style="margin-top:10px;" placeholder="Uhrzeit" #time>
+                <mat-label>Zeit</mat-label>
+                <textarea matInput placeholder="z.B.: 12:00"#time required></textarea>
             </mat-form-field><br>
         </mat-card-content>
         <mat-card-actions>
