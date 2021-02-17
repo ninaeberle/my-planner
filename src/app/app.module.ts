@@ -21,7 +21,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatBadgeModule} from '@angular/material/badge';
 import {MatInputModule} from '@angular/material/input';
 
 
@@ -48,7 +47,6 @@ import {MatInputModule} from '@angular/material/input';
     MatSliderModule,
     MatCardModule,
     MatDatepickerModule,
-    MatBadgeModule,
     MatInputModule
 
   ],
